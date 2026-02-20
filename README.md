@@ -1,1 +1,1 @@
-# Water-Quality-Monitor by Karan
+# Water-Quality-Monitor

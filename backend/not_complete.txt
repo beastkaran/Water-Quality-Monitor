@@ -1,0 +1,166 @@
+❌ NOT IMPLEMENTED:
+Database Tables
+❌ Alerts - NOT CREATED (no boil notices, contamination alerts, outages)
+❌ Collaborations - NOT CREATED (no NGO collaboration tools)
+Features
+❌ Module C - Alerts & Collaboration Tools (0% complete)
+
+No alert system
+No boil notice functionality
+No contamination alert system
+No NGO dashboard/collaboration
+❌ Module D - Analytics & Predictive Insights (0% complete)
+
+No historical trends/graphs
+No predictive alerts
+No analytics dashboard
+No data analysis tools
+Enhanced Features
+❌ Real-time monitoring via government APIs
+❌ Historical trends analysis
+❌ NGO & Authority dashboards
+❌ Predictive analytics
+❌ Boil advisories system
+User Roles
+❌ Missing roles: citizen, ngo, admin (only have: user, authority)
+SUMMARY:
+Milestone 1 & 2 are mostly complete (~60%), but Milestone 3 & 4 are not started.
+ You have the foundation (setup, auth, reporting, stations), but Alerts, Collaborations, Analytics, 
+ and Predictive Insights modules are entirely missing.
+
+
+
+ plan:
+ Water Quality Monitor
+Project Statement:
+Enables real-time water quality monitoring for communities and authorities, providing open data dashboards, user
+reports, and alerts for contamination.
+Key Features:
+●
+Real-time monitoring via government APIs
+●
+User-submitted pollution reports with images
+●
+Alerts for contamination and boil advisories
+●
+Historical trends for analysis
+●
+NGO & authority dashboards
+●
+Predictive alerts using analytics
+Tech Stack:
+●
+Frontend: React.js + Tailwind CSS
+●
+Backend: FastAPI
+●
+Database: PostgreSQL
+●
+Auth: JWT
+Modules:
+●
+Module A: User & Report Management
+●
+Module B: Real-Time Water Data & Maps
+●
+Module C: Alerts & Collaboration Tools
+●
+Module D: Analytics & Predictive Insights
+Architecture Diagram:
+8-Week Milestone Plan
+Milestone 1: Weeks 1–2 – Setup & Auth
+●
+Week 1: Set up backend & database schema
+●
+Week 2: Build login/register and map-based UI skeleton
+Expected Output: Authenticated dashboard and base map view
+Milestone 2: Weeks 3–4 – Reporting & Station Data
+●
+Week 3: Implement the user reporting system
+●
+Week 4: Display real-time station readings
+Expected Output: Reports and water data feed integrated
+Milestone 3: Weeks 5–6 – Alerts & History
+●
+Week 5: Add alerts module (boil notices, contamination alerts)
+●
+Week 6: Implement historical data graphs
+Expected Output: Alerts and historical trends
+Milestone 4: Weeks 7–8 – NGO Dashboard & Deployment
+●
+Week 7: Add NGO collaboration tools
+●
+Week 8: Predictive alerts, QA, deployment
+Expected Output: Complete water monitoring platform
+Expected Project Outcome:
+WaterWatch will provide a collaborative, real-time water safety dashboard that engages users and authorities.
+Database Schema:
+●
+Users: id (INT, PK), name (VARCHAR), email (VARCHAR, UNIQUE), password (VARCHAR), role (ENUM:
+'citizen'
+,
+'ngo'
+,
+' authority'
+,
+'admin'), location (VARCHAR), created
+_
+at (TIMESTAMP)
+●
+Reports: id (INT, PK), user
+_
+id (FK to Users.id), photo
+_
+url (VARCHAR), location (VARCHAR), description
+(TEXT), water
+_
+source (VARCHAR), status (ENUM: 'pending'
+' verified'
+,
+,
+'rejected'), created
+_
+at (TIMESTAMP)
+●
+WaterStations: id (INT, PK), name (VARCHAR), location (VARCHAR), latitude (NUMERIC), longitude
+(NUMERIC), managed
+_
+by (VARCHAR), created
+_
+at (TIMESTAMP)
+●
+StationReadings: id (INT, PK), station
+_
+id (FK to WaterStations.id), parameter (ENUM: 'pH'
+,
+'lead'
+,
+'arsenic'), value (NUMERIC), recorded
+_
+at (TIMESTAMP)
+'turbidity'
+,
+'DO'
+,
+●
+Alerts: id (INT, PK), type (ENUM: 'boil
+notice'
+'contamination'
+,
+,
+_
+' outage'), message (TEXT),
+location (VARCHAR), issued
+_
+at (TIMESTAMP)
+●
+Collaborations: id (INT, PK), ngo
+_
+name (VARCHAR), project
+_
+contact
+_
+email (VARCHAR), created
+_
+at (TIMESTAMP)
+name (VARCHAR),

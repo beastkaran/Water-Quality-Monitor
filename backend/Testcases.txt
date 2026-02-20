@@ -1,0 +1,57 @@
+Test Case 1: User Registration
+
+        Endpoint: POST /signup
+
+        Input: Name, Email, Password
+
+        Expected Outcome: User is registered successfully
+
+        Result: ✅ Passed
+
+Test Case 2: Duplicate User Registration
+
+        Endpoint: POST /signup
+
+        Input: Email already registered in the system
+
+        Expected Outcome: 400 Bad Request – Email already registered
+
+        Result: ✅ Passed
+
+Test Case 3: Login with Valid Credentials
+
+        Endpoint: POST /login
+
+        Input: Valid email and password
+
+        Expected Outcome: Access token is generated and returned
+
+        Result: ✅ Passed
+
+Test Case 4: Login with Invalid Credentials
+
+        Endpoint: POST /login
+
+        Input: Valid email with incorrect password
+
+        Expected Outcome: 401 Unauthorized – Invalid credentials
+
+        Result: ✅ Passed
+
+Test Case 5: Access Profile with Valid Token
+
+        Endpoint: POST /profile
+
+        Header: Authorization: Bearer <access_token>
+
+        Expected Outcome: Authenticated user details are returned
+
+        Result: ✅ Passed
+
+Test Case 6: Access Profile Without Token
+
+        Endpoint: POST /profile
+
+        Expected Outcome: 401 Unauthorized
+
+        Result: ✅ Passed
