@@ -243,6 +243,8 @@ uvicorn main:app --reload
 **3. Start Frontend (Terminal 2):**
 ```bash
 cd frontend
+npm install
+npm install -D @tailwindcss/postcss
 npm run dev
 ```
 

@@ -93,7 +93,7 @@ cd backend
 
 ### Step 4.2: Create Virtual Environment
 
-python -m venv venv
+python3 -m venv venv
 
 
 ---
@@ -131,8 +131,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 ### Step 4.6: Run Backend Server
 pip install 'pydantic[email]'
- 22 python create_tables.py
-  23 python seed_users.py
+python create_tables.py
+python seed_users.py
 
 uvicorn main:app --reload
 
