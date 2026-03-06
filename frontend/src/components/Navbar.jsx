@@ -48,7 +48,7 @@ function Navbar({ activePage, onNavigate, onLogout }) {
             </span>
           )}
           <button
-            onClick={onLogout}
+            onClick={() => { if (window.confirm("Are you sure you want to logout?")) onLogout(); }}
             style={{ background: "white", color: "#cc2222", border: "1px solid #cc2222", borderRadius: "3px", padding: "4px 10px", fontSize: "12px", cursor: "pointer", fontFamily: "Arial, sans-serif" }}
           >
             Logout
